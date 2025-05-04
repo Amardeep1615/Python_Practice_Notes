@@ -35,6 +35,18 @@
     34.Python String Formatting
     35.Python File Handling
     
+    Day1 - Git,Github
+    Day2 - Variables
+    Day3 - Datatypes
+    Day4 - Operators-1
+    Day5 - Operators-2
+    Day6 - Conditional Statements,Loops
+    Day7 - Functions
+    Day8 - Modules
+    Day9 - Packages
+    Day10 - List Methods
+    Day11 - Set,Tuple Methods
+    Day12 - Dict Methods
 
 
 
