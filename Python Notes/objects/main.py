@@ -1,78 +1,81 @@
 class Employee:
-    def __init__(self, emp_id, name, salary):
-        self.emp_id = emp_id
+    def __init__(self, id, name, role, salary):
+        self.id = id
         self.name = name
+        self.role = role
         self.salary = salary
-        self.role = "Employee"
 
     def get_details(self):
-        return f"ID: {self.emp_id}, Name: {self.name}, Role: {self.role}, Salary: {self.salary}"
+        print(f"ID: {self.id}, Name: {self.name}, Role: {self.role}, Salary: {self.salary}")
 
     def get_access_level(self):
-        return "General Access"
+        print("Access Level: General Access")
 
 
-# Subclass: Developer
 class Developer(Employee):
-    def __init__(self, emp_id, name, salary, programming_language):
-        super().__init__(emp_id, name, salary)
-        self.programming_language = programming_language
+    def __init__(self, id, name, salary, programming_language):
+        self.id = id
+        self.name = name
         self.role = "Developer"
+        self.salary = salary
+        self.programming_language = programming_language
 
     def get_access_level(self):
-        return "Code Repository Access"
+        print("Access Level: Code Repository Access")
 
     def get_details(self):
-        base = super().get_details()
-        return f"{base}, Language: {self.programming_language}"
+        print(f"ID: {self.id}, Name: {self.name}, Role: {self.role}, Salary: {self.salary}")
+        print(f"Language: {self.programming_language}")
 
 
-# Subclass: Tester
 class Tester(Employee):
-    def __init__(self, emp_id, name, salary, test_tool):
-        super().__init__(emp_id, name, salary)
-        self.test_tool = test_tool
+    def __init__(self, id, name, salary, testing_tool):
+        self.id = id
+        self.name = name
         self.role = "Tester"
+        self.salary = salary
+        self.testing_tool = testing_tool
 
     def get_access_level(self):
-        return "Test Management Tool Access"
+        print("Access Level: Test Management Tool Access")
 
     def get_details(self):
-        base = super().get_details()
-        return f"{base}, Tool: {self.test_tool}"
+        print(f"ID: {self.id}, Name: {self.name}, Role: {self.role}, Salary: {self.salary}")
+        print(f"Tool: {self.testing_tool}")
 
 
-# Subclass: Manager
 class Manager(Employee):
-    def __init__(self, emp_id, name, salary, team_size):
-        super().__init__(emp_id, name, salary)
-        self.team_size = team_size
+    def __init__(self, id, name, salary, team_size):
+        self.id = id
+        self.name = name
         self.role = "Manager"
+        self.salary = salary
+        self.team_size = team_size
 
     def get_access_level(self):
-        return "Admin Dashboard Access"
+        print("Access Level: Admin Dashboard Access")
 
     def get_details(self):
-        base = super().get_details()
-        return f"{base}, Team Size: {self.team_size}"
+        print(f"ID: {self.id}, Name: {self.name}, Role: {self.role}, Salary: {self.salary}")
+        print(f"Team Size: {self.team_size}")
+
+
+def display_employee_info(employee):
+    employee.get_access_level()
+    employee.get_details()
+    print()
 
 
 # Example usage
-def display_employee_info(employee):
-    print(employee.get_details())
-    print("Access Level:", employee.get_access_level())
-    print("-" * 40)
-
-
-# Records
 employees = [
     Developer(101, "Alice", 75000, "Python"),
     Tester(102, "Bob", 60000, "Selenium"),
     Manager(103, "Charlie", 90000, 10),
-    Employee(104, "Diana", 50000)
+    Employee(104, "Diana", "Employee", 50000)
 ]
 
-# Polymorphic behavior
 for emp in employees:
     display_employee_info(emp)
+
+
 
